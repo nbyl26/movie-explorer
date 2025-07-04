@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { getPopularMovies, searchMovies } from "../utils/api";
-import MovieCard from "../components/MovieCard";
 import { useSearch } from "../context/SearchContext";
+
+import Loader from "../components/Loader";
+import MovieCard from "../components/MovieCard";
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -32,7 +34,7 @@ const Home = () => {
                 {keyword ? `Search Results for "${keyword}"` : "🔥 Popular Movies"}
             </h2>
             {loading ? (
-                <p>Loading movies...</p>
+                <Loader />
             ) : movies.length === 0 ? (
                 <p>No movies found.</p>
             ) : (
