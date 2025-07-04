@@ -15,7 +15,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 px-6 py-4 bg-white dark:bg-gray-900 shadow-md">
+        <nav className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 px-6 py-4 bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
             <h1 className="text-xl font-bold text-gray-900 dark:text-white">
                 <Link to="/">🎬 Movie Explorer</Link>
             </h1>
