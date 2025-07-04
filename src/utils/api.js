@@ -18,3 +18,20 @@ export const getPopularMovies = async () => {
     return [];
   }
 };
+
+export const searchMovies = async (query) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/search/movie`, {
+      params: {
+        api_key: API_KEY,
+        language: "en-US",
+        query,
+        page: 1,
+      },
+    });
+    return response.data.results;
+  } catch (error) {
+    console.error("Gagal mencari film:", error);
+    return [];
+  }
+};
