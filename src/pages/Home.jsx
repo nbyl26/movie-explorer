@@ -4,6 +4,8 @@ import { useSearch } from "../context/SearchContext";
 
 import Loader from "../components/Loader";
 import MovieCard from "../components/MovieCard";
+import EmptyState from "../components/EmptyState";
+
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -36,7 +38,7 @@ const Home = () => {
             {loading ? (
                 <Loader />
             ) : movies.length === 0 ? (
-                <p>No movies found.</p>
+                <EmptyState type="search" />
             ) : (
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     {movies.map((movie) => (

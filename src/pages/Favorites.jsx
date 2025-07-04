@@ -12,7 +12,7 @@ const Favorites = () => {
         // Simulasi loading
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 300); 
+        }, 300);
 
         return () => clearTimeout(timer);
     }, []);
@@ -23,7 +23,7 @@ const Favorites = () => {
             {loading ? (
                 <Loader />
             ) : bookmarks.length === 0 ? (
-                <p>You haven't bookmarked any movies yet.</p>
+                <EmptyState type="bookmark" />
             ) : (
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     {bookmarks.map((movie) => (
