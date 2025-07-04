@@ -1,7 +1,7 @@
 import { useTheme } from "../context/ThemeContext";
 import { useSearch } from "../context/SearchContext";
 import { useState } from "react";
-import { Sun, Moon, Search, Heart } from "lucide-react";
+import { Sun, Moon, Search, Heart, Home } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -19,10 +19,16 @@ const Navbar = () => {
 
     return (
         <nav className="sticky top-0 z-50 flex flex-col sm:flex-row sm:justify-between items-center gap-2 px-6 py-4 bg-white dark:bg-gray-900 shadow-md">
-            <Link to="/" className="text-xl font-bold text-gray-900 dark:text-white">
-                🎬 Movie Explorer
+            {/* Brand */}
+            <Link
+                to="/"
+                className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2"
+            >
+                <Home size={20} />
+                Movie Explorer
             </Link>
 
+            {/* Search Bar */}
             <form onSubmit={handleSubmit} className="flex w-full sm:w-auto">
                 <input
                     type="text"
@@ -40,14 +46,26 @@ const Navbar = () => {
                 </button>
             </form>
 
-            <div className="flex items-center gap-3 mt-2 sm:mt-0">
+            {/* Nav Menu */}
+            <div className="flex items-center gap-4 mt-2 sm:mt-0">
+                <Link
+                    to="/"
+                    className={`flex items-center gap-1 ${isActive("/") ? "text-blue-600 font-semibold" : "text-gray-700 dark:text-gray-200"
+                        }`}
+                >
+                    <Home size={20} />
+                    Home
+                </Link>
+
                 <Link
                     to="/favorites"
-                    className={`flex items-center gap-1 ${isActive("/favorites") ? "text-blue-600 font-semibold" : "text-gray-700 dark:text-gray-200"
+                    className={`flex items-center gap-1 ${isActive("/favorites")
+                            ? "text-pink-500 font-semibold"
+                            : "text-gray-700 dark:text-gray-200"
                         }`}
                 >
                     <Heart size={20} />
-                    My Favorites
+                    Favorites
                 </Link>
 
                 <button

@@ -1,8 +1,8 @@
 import { useBookmark } from "../context/BookmarkContext";
 import MovieCard from "../components/MovieCard";
 import Loader from "../components/Loader";
+import EmptyState from "../components/EmptyState"; // 🛠️ tambahkan baris ini
 import { useEffect, useState } from "react";
-
 
 const Favorites = () => {
     const { bookmarks } = useBookmark();
