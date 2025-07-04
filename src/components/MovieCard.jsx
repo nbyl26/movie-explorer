@@ -1,4 +1,5 @@
 import { useBookmark } from "../context/BookmarkContext";
+import { Heart, HeartOff } from "lucide-react";
 
 const MovieCard = ({ movie }) => {
     const { title, poster_path, vote_average, id } = movie;
@@ -21,10 +22,10 @@ const MovieCard = ({ movie }) => {
 
             <button
                 onClick={() => toggleBookmark(movie)}
-                className="absolute top-2 right-2 text-xl transition-transform hover:scale-125"
+                className="absolute top-2 right-2 text-pink-500 hover:scale-125 transition-transform bg-white dark:bg-gray-800 rounded-full p-1"
                 title="Bookmark this movie"
             >
-                {isBookmarked(id) ? "💖" : "🤍"}
+                {isBookmarked(id) ? <Heart fill="currentColor" size={20} /> : <HeartOff size={20} />}
             </button>
         </div>
     );
