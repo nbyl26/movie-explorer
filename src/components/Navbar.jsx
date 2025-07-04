@@ -2,6 +2,8 @@ import { useTheme } from "../context/ThemeContext";
 import { useSearch } from "../context/SearchContext";
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
     const { isDark, toggleTheme } = useTheme();
     const { setKeyword } = useSearch();
@@ -15,8 +17,15 @@ const Navbar = () => {
     return (
         <nav className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 px-6 py-4 bg-white dark:bg-gray-900 shadow-md">
             <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                🎬 Movie Explorer
+                <Link to="/">🎬 Movie Explorer</Link>
             </h1>
+
+            <Link
+                to="/favorites"
+                className="text-blue-600 dark:text-blue-300 underline"
+            >
+                My Favorites
+            </Link>
 
             <form onSubmit={handleSubmit} className="flex">
                 <input
