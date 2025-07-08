@@ -24,7 +24,6 @@ const Navbar = () => {
                 to="/"
                 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2"
             >
-                <Home size={20} />
                 Movie Explorer
             </Link>
 

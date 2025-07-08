@@ -6,13 +6,13 @@ const EmptyState = ({ type = "search" }) => {
             {type === "search" ? (
                 <>
                     <SearchX size={48} className="mb-4" />
-                    <p className="text-lg font-medium">No movies found 😢</p>
-                    <p className="text-sm">Try searching with a different keyword.</p>
+                    <p className="text-lg font-medium">No movies found</p>
+                    <p className="text-sm">Try searching with a different keyword</p>
                 </>
             ) : (
                 <>
                     <HeartOff size={48} className="mb-4" />
-                    <p className="text-lg font-medium">No favorites yet 🫠</p>
+                    <p className="text-lg font-medium">No favorites yet</p>
                     <p className="text-sm">Start bookmarking movies you like!</p>
                 </>
             )}
